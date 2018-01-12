@@ -1,0 +1,13 @@
+server:
+  port: 0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://sp-discovery:8761/eureka/
+  instance:
+    preferIpAddress: true
+
+logging:
+  level:
+    io.github.yashchenkon.socialpics: DEBUG
