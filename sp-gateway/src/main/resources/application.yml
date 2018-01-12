@@ -8,16 +8,15 @@ eureka:
 endpoints:
   restart:
     enabled: true
-  shutdown:
-    enabled: true
-  health:
-    sensitive: false
 
 zuul:
   routes:
     sp-facebook:
       path: /api/facebook/**
       serviceId: sp-facebook
+    sp-github:
+      path: /api/github/**
+      serviceId: sp-github
 
 server:
   port: 8765
