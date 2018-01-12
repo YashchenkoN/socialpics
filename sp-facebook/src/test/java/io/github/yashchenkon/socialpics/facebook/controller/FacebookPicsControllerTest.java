@@ -35,13 +35,6 @@ public class FacebookPicsControllerTest {
     public void shouldReturnPictureDefaultSize() throws Exception {
         mockMvc.perform(get("/api/facebook/userId"))
                 .andExpect(status().isOk())
-                .andExpect(forwardedUrl(String.format(FacebookPicsController.FACEBOOK_URL, "userId", "100", "100")));
-    }
-
-    @Test
-    public void shouldReturnPictureCustomSize() throws Exception {
-        mockMvc.perform(get("/api/facebook/userId?width=200&height=200"))
-                .andExpect(status().isOk())
-                .andExpect(forwardedUrl(String.format(FacebookPicsController.FACEBOOK_URL, "userId", "200", "200")));
+                .andExpect(forwardedUrl(String.format(FacebookPicsController.FACEBOOK_URL, "userId")));
     }
 }
